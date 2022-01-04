@@ -1,0 +1,560 @@
+/* Box Model Hack */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  /* outline: 1px dotted red; */
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+.cover {
+  /* background: url("../images/bg1.jpg") no-repeat;
+  background-size: 100%; */
+  position: relative;
+  overflow: hidden;
+}
+
+.cover::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: url("../images/bg1.jpg") no-repeat;
+  background-size: 100%;
+  -webkit-transform: scaleX(-1);
+     -moz-transform: scaleX(-1);
+          transform: scaleX(-1);
+  /* filter: FlipV; */
+}
+
+.cover-2 {
+  background: #e3e7e9;
+  background: -webkit-linear-gradient(to bottom, #eef2f4 50%, #cacdce);
+  background:    -moz-linear-gradient(to bottom, #eef2f4 50%, #cacdce);
+  background:         linear-gradient(to bottom, #eef2f4 50%, #cacdce);
+  /* background: url("../images/bg3.jpg"), url("../images/bg2.jpg");
+  background-size: auto 90%, 33%;
+  background-position: -50% 0, 120% 100%;
+  background-repeat: no-repeat; */
+}
+
+.cover-3 {
+  background: #caced1;
+  background: -webkit-linear-gradient(to right, #caced1 10%, #fff, #fff, #fff,  #fff);
+  background:    -moz-linear-gradient(to right, #caced1 10%, #fff, #fff, #fff,  #fff);
+  background:         linear-gradient(to right, #caced1 10%, #fff, #fff, #fff,  #fff);
+}
+
+h1, h2, h3, h4, h5, ul {
+  margin: 0;
+}
+
+header img {
+  /* display: block;
+  max-width: 100%; */
+  height: 100px;
+}
+
+/******************************************
+Typography
+*******************************************/
+
+body {
+  font-family: Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* h1, h2, h3, h4 {
+  display: block;
+} */
+
+h1, h2,
+.span-alt  {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  padding-bottom: 1.5rem;
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #ff8400;
+  padding-bottom: 0.8rem;
+}
+
+p {
+  margin: 0;
+  text-align: justify;
+  font-size: .75rem;
+  word-spacing: .25rem;
+  line-height: 1.35rem;
+}
+
+span {
+  display: inline-block;
+}
+
+form {
+  font-size: .7rem;
+}
+
+.order h2,
+.order h3,
+.book h2,
+.book h3,
+.book h4,
+.span-alt-2,
+.testimonials h2,
+.testimonials h3,
+.testimonals p {
+  text-align: center;
+}
+
+.menu-effect {
+  color: #fff;
+}
+
+.span-alt,
+.testimonials span {
+  display: block;
+  text-align: center;
+}
+
+.span-alt {
+  font-weight: 700;
+}
+
+.span-alt-2 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #f96103;
+}
+
+.span-alt-3 {
+  font-size: 1.5rem;
+}
+
+.span-alt-4 {
+  font-size: 0.8rem;
+  color: #494949;
+}
+
+.testimonials {
+  text-align: center;
+}
+
+.testimonials p {
+  font-size: .9rem;
+  color: #2e2d2d;
+  font-style: italic;
+  line-height: 1.6rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+/*
+  ========================================
+  Grid
+  ========================================
+*/
+.container,
+.grid {
+  width: 950px;
+  margin: 0 auto;
+}
+
+.container {
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.col-1-2 {
+  width: 49.99%;
+}
+
+.col-1-4 {
+  width: 24.99%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.col-1-3 {
+  width: 33.33%;
+}
+
+.col-2-3 {
+  width: 66.66%;
+}
+
+.col-1-2,
+.col-1-4,
+.col-1-3,
+.col-2-3 {
+  display: inline-block;
+  vertical-align: top;
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+/******************************************
+/* Header
+/*******************************************/
+
+header a {
+  float: left;
+}
+
+/******************************************
+Navigation
+*******************************************/
+
+nav {
+  text-align: right;
+  font-weight: 700;
+  font-size: 0.6rem;
+}
+
+ul {
+  /* margin: 0 0 8% 0; */
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 2%;
+}
+
+li:last-child {
+  margin-right: 0;
+}
+
+.nav-primary {
+  padding-top: 1rem;
+}
+
+.nav-order {
+  padding: 0 8rem 2rem 8rem;
+  text-align: center;
+  font-size: 0.7rem;
+  letter-spacing: 0.05rem;
+}
+
+.nav-order li {
+  margin: 0;
+  width: 20%;
+  padding-bottom: .5rem;
+  border-bottom: 1.5px solid #9d9a9a;
+}
+
+.nav-order li:hover {
+  border-bottom: 1.5px solid #ff8400;
+}
+
+/******************************************
+Links
+*******************************************/
+
+a {
+  text-decoration: none;
+  color: #373737;
+}
+
+a:hover {
+  color: #ff8400;
+}
+
+/******************************************
+Buttons
+*******************************************/
+
+.btn {
+  display: inline-block;
+  margin: 0;
+  padding: 0.6rem 1.6rem 0.6rem 1.3rem;
+  border-radius: 5px;
+  background-color: #ff8400;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 0.7rem;
+  letter-spacing: .5px;
+}
+
+.btn:hover {
+  background-color: #ff9727;
+  color: #fff;
+}
+
+/* .btn-alt {
+  border: 1px solid #fff;
+  padding: 10px 30px;
+}
+
+.btn-alt:hover {
+  background: #fff;
+  color: #648880;
+}
+
+.btn-default {
+  border: 0;
+  background: #648880;
+  padding: 11px 30px;
+  font-size: 14px;
+}
+
+/******************************************
+Welcome
+/*******************************************/
+
+main {
+  padding: 4rem 0 5rem 0;
+}
+
+h1 {
+  padding: 0 0 1rem 0;
+}
+
+form {
+  padding: 0 0 1rem 0;
+}
+
+form input {
+  width: 39.99%;
+  padding: .5rem 1.3rem;
+  border: 1px solid #bdb9b9;
+  border-radius: 5px;
+  border-right: none;
+}
+
+.socials li {
+  font-weight: 400;
+  font-size: 0.7rem;
+  color: black;
+}
+
+.socials i {
+  color: #ff8400;
+  margin-right: 5px;
+}
+
+/******************************************
+About
+*******************************************/
+
+.about {
+  padding: 0 8rem 7rem 0;
+}
+
+.about aside {
+  display: inline-block;
+}
+
+.about img {
+  max-width: 100%;
+  height: 100%;
+}
+
+.about h3 {
+  margin-top: 4rem;
+}
+
+.about p {
+  padding-bottom: 2.5rem;
+}
+
+/******************************************
+Order
+*******************************************/
+
+.order {
+  padding: 3rem 0 8rem 0;
+}
+
+.menu-select {
+  padding: 0 3rem;
+}
+
+.menu-select li {
+  margin: 0;
+}
+
+li.row-top {
+  margin-bottom: 1.8rem;
+}
+
+.menu-img {
+  position: relative;
+}
+
+.menu-img img {
+  height: 200px;
+  max-width: 100%;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.menu-effect {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  max-width: 100%;
+  padding-top: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: .5s ease;
+  text-align: center;
+  /* color: #494949; */
+}
+
+.menu-effect span {
+  font-size: 1rem;
+  padding-bottom: 1rem;
+}
+
+
+/* -webkit-transform: translate(-50%, -50%);
+-moz-transform: translate(-50%, -50%);
+ -ms-transform: translate(-50%, -50%);
+     transform: translate(-50%, -50%); */
+
+.menu-img:hover img {
+  opacity: 0.5;
+}
+
+.menu-img:hover .menu-effect {
+  visibility: visible;
+  opacity: 1;
+}
+
+.menu-img:hover a {
+  cursor: pointer;
+}
+
+/******************************************
+Book
+*******************************************/
+
+.book {
+  padding: 4rem 4rem 5rem 4rem;
+  text-align: center;
+}
+
+.book h4,
+.span-sched {
+  font-weight: 400;
+  font-size: .7rem;
+}
+
+.book h4 {
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+
+i.fa-phone {
+  border: 1px solid #ff8400;
+  border-radius: 50%;
+  color: #ff8400;
+  padding: .8rem;
+}
+
+.book img {
+  /* display: block; */
+  /* max-width: 70%; */
+  max-height: 400px;
+  padding: ;
+  transform: rotate(90deg);
+}
+
+.span-sched {
+  padding: 1.2rem 0 .8rem 0;
+}
+
+.div-address {
+  padding-top: 2rem;
+}
+
+.book-div {
+  padding-left: 3rem;
+}
+
+.div-span {
+  display: block;
+  text-align: left;
+}
+
+.span-address {
+  padding: 0;
+}
+
+iframe {
+  height: 15rem;
+  border-style: none;
+}
+
+/******************************************
+Testimonials
+*******************************************/
+
+.testimonials {
+  padding: 4rem 5rem 6rem 5rem;
+}
+
+.testimonials h2 {
+  padding-bottom: 2rem;
+}
+
+.customer-img {
+  height: 5rem;
+  border-radius: 50%;
+  margin: 0 0 1rem 0;
+  vertical-align: top;
+}
+
+.star-rating {
+  margin: 1rem 0 1rem 0;
+}
+
+
+
+/******************************************
+Footer
+*******************************************/
+
+footer {
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
